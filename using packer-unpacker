@@ -9,7 +9,7 @@ _____________________________
 
 generate [output.cpio]
 ./gen_initramfs.sh -o [output.cpio] -u 0 -g 0 initramfs_root
-
+./gen_initramfs.sh -o output.cpio -u 0 -g 0 initramfs_root
 _____________________________
 
 

@@ -1,24 +1,23 @@
 ---find_start_end()---
-367+1 записей получено
-367+1 записей отправлено
-скопировано 2282504 байта (2,3 MB), 0,00505536 c, 452 MB/c
-lzop: /tmp/krepack.fTst/kernel.image.lzo: warning: ignoring trailing garbage in lzop file
-28+1 записей получено
-28+1 записей отправлено
-скопировано 4004596 байт (4,0 MB), 0,00251666 c, 1,6 GB/c
-11+1 записей получено
-11+1 записей отправлено
-скопировано 3674168 байт (3,7 MB), 0,00606311 c, 606 MB/c
+626+1 records in
+626+1 records out
+3893556 bytes (3.9 MB) copied, 0.00515748 s, 755 MB/s
+lzop: /tmp/krepack.D9Oc/kernel.image.lzo: warning: ignoring trailing garbage in lzop file
+45+1 records in
+45+1 records out
+6454004 bytes (6.5 MB) copied, 0.00417234 s, 1.5 GB/s
+1+1 records in
+1+1 records out
+3677228 bytes (3.7 MB) copied, 0.00515958 s, 713 MB/s
 ---CHECK_MMC_CAP_ERASE()---
-657 блок
 ---makeImage()---
-1+0 записей получено
-1+0 записей отправлено
-скопировано 141392 байта (141 kB), 0,000660046 c, 214 MB/c
-7+1 записей получено
-7+1 записей отправлено
-скопировано 3673844 байта (3,7 MB), 0,00274397 c, 1,3 GB/c
-1+0 записей получено
-1+0 записей отправлено
+1+0 records in
+1+0 records out
+141392 bytes (141 kB) copied, 0.000163894 s, 863 MB/s
+1+1 records in
+1+1 records out
+3676916 bytes (3.7 MB) copied, 0.00355655 s, 1.0 GB/s
+1+0 records in
+1+0 records out
 ---size_append()---
 ---MAKE_FIPS_BINARY()---

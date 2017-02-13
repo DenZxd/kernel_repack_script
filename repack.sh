@@ -1,8 +1,8 @@
 #!/bin/bash
 ##############################################################################
 # you should point where your cross-compiler is         
-#COMPILER=/home/xiaolu/bin/arm-eabi-4.4.3/bin/arm-eabi-
-COMPILER=`echo $CROSS_COMPILE`
+COMPILER=/home/denz/development/arm-linux-androideabi-4.6/bin/arm-linux-androideabi-
+#COMPILER=`echo $CROSS_COMPILE`
 #COMPILER="e:/tools/cygwin/toolchains/arm-linux-androideabi-4.4.3/bin/arm-linux-androideabi-"
 COMPILER_LIB=$(${COMPILER}gcc -print-libgcc-file-name | sed -r 's/\/libgcc.a$//')
 ##############################################################################
@@ -561,7 +561,7 @@ ${COMPILER}gcc -Wp,-MD,arch/arm/boot/compressed/.piggy.$compress_type.o.d  $NOST
 
 #3. head.o
 printhl "    Compiling head.o"
-${COMPILER}gcc -Wp,-MD,arch/arm/boot/compressed/.head.o.d  $NOSTDINC_FLAGS -D__ASSEMBLY__ $CFLAGS_ABI  -include asm/unified.h -msoft-float -gdwarf-2    -Wa,-march=all  -DTEXT_OFFSET=0x00008000 -DFIPS_KERNEL_RAM_BASE=0x40008000   -c -o arch/arm/boot/compressed/head.o arch/arm/boot/compressed/head.S
+${COMPILER}gcc -Wp,-MD,arch/arm/boot/compressed/.head.o.d  $NOSTDINC_FLAGS -D__ASSEMBLY__ $CFLAGS_ABI  -include asm/unified.h -msoft-float -gdwarf-2    -Wa,-march=all  -DTEXT_OFFSET=0x00008000   -c -o arch/arm/boot/compressed/head.o arch/arm/boot/compressed/head.S
 
 #4. misc.o
 printhl "    Compiling misc.o"
