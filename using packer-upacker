@@ -1,0 +1,53 @@
+uImage -> zImage
+
+dd if=./uImage of=./zImage bs=1 skip=64
+_____________________________
+to unpack
+./unpack.sh zImage
+
+_____________________________
+
+generate [output.cpio]
+./gen_initramfs.sh -o [output.cpio] -u 0 -g 0 initramfs_root
+
+_____________________________
+
+
+packing newzImage
+./repack.sh zImage output.cpio new_zImage
+
+_____________________________
+
+mkimage -A arm -O linux -T kernel -C none -a 0x81000040 -e 0x81000040 -n Linux-3.0.31+ -d zImage uImage
+
+____________________________
+
+
+???????
+репак рамдиска
+# find . | cpio -o -H newc | gzip > ../ramdisk.img
+
+
+
+
+_______________________________________________________________________________________________
+инфа на uImage
+
+mkimage -l uImage
+Image Name:   Linux-3.0.31+
+Created:      Sat Feb  2 12:46:50 2013
+Image Type:   ARM Linux Kernel Image (uncompressed)
+Data Size:    2288716 Bytes = 2235.07 kB = 2.18 MB
+Load Address: 81000040
+Entry Point:  81000040
+_______________________________________________________________________________________________
+инфа на uImage_recovery
+
+mkimage -l uImage_recovery
+Image Name:   Linux-3.0.31+
+Created:      Sat Feb  2 12:47:30 2013
+Image Type:   ARM Linux Kernel Image (uncompressed)
+Data Size:    3899768 Bytes = 3808.37 kB = 3.72 MB
+Load Address: 81000040
+Entry Point:  81000040
+

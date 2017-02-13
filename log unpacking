@@ -1,0 +1,52 @@
+denz@AsusHD:~/Allinwork/Test lab/Kernel_Repack_OMAP$ dd if=./uImage of=./zImage bs=1 skip=64
+2288716+0 записей получено
+2288716+0 записей отправлено
+скопировано 2288716 байт (2,3 MB), 2,94188 c, 778 kB/c
+denz@AsusHD:~/Allinwork/Test lab/Kernel_Repack_OMAP$ ./unpack.sh zImage
+./unpack.sh: строка 60: [: /home/denz/Allinwork/Test: ожидается использование бинарного оператора
+mkdir: невозможно создать каталог «lab/Kernel_Repack_OMAP/unpack_kernel_tmp»: Нет такого файла или каталога
+[I] Extracting lzo'd kernel image from file: zImage (start = 6212) 
+./unpack.sh: строка 319: [: -le: ожидается использование унарного оператора
+./unpack.sh: строка 320: [: -le: ожидается использование унарного оператора
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+./unpack.sh: строка 298: [: =: ожидается использование унарного оператора
+mv: указанная цель «lab/Kernel_Repack_OMAP/unpack_kernel_tmp/recovery.tar» не является каталогом
+[I] Found payload: 'recovery' compression= offset=, len= 
+[I] Extracting '/home/denz/Allinwork/Test lab/Kernel_Repack_OMAP/unpack_kernel_tmp/recovery.tar' ... 
+cat: /home/denz/Allinwork/Test: Это каталог
+cat: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+./unpack.sh: строка 303: [: -le: ожидается использование унарного оператора
+./unpack.sh: строка 304: [: -le: ожидается использование унарного оператора
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: /home/denz/Allinwork/Test: Это каталог
+./unpack.sh: строка 298: [: =: ожидается использование унарного оператора
+mv: указанная цель «lab/Kernel_Repack_OMAP/unpack_kernel_tmp/boot.tar» не является каталогом
+[I] Found payload: 'boot' compression= offset=, len= 
+[I] Extracting '/home/denz/Allinwork/Test lab/Kernel_Repack_OMAP/unpack_kernel_tmp/boot.tar' ... 
+cat: /home/denz/Allinwork/Test: Это каталог
+cat: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/kernel: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/kernel: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/kernel: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/kernel: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test: Это каталог
+grep: lab/Kernel_Repack_OMAP/unpack_kernel_tmp/kernel: Нет такого файла или каталога
+./unpack.sh: строка 197: [: =: ожидается использование унарного оператора
+[I] CPIO compression type detected =  | offset =  
+[I] Extracting non-compressed CPIO image from kernel image (offset = ) 
+[I] Expanding CPIO archive: initramfs.cpio to initramfs_root. 
+./unpack.sh: строка 218: [: /home/denz/Allinwork/Test: ожидается использование бинарного оператора
+denz@AsusHD:~/Allinwork/Test lab/Kernel_Repack_OMAP$ 

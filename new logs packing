@@ -1,0 +1,112 @@
+denz@AsusHD:~/Allinwork/Test/Kernel_Repack_Samsung$ ./repack.sh zImage initramfs_root new_zImage
+---------------------------kernel repacker for i9100--------------------------- √
+Extracting lzo'd kernel from zImage (start = 6212) √
+Non-compressed CPIO image from kernel image (offset = 141392). √
+Check MMC_CAP_ERASE instruction: √
+    Linux version 3.0.31+ (someone@10123243)
+    (gcc version 4.6.x-google 20120106 (prerelease)
+    (GCC) ) #1 SMP PREEMPT 2013年 02月 02日 星期六 17:44:21 CST √
+    Nothing found. √
+make initramfs.cpio √
+Now we are rebuilding the zImage: √
+CPIO image MAX size:330752 √
+Head count:472144 √
+Making head.img ( from 0 ~ 141392 ) √
+Making a tail.img ( from 472144 ~ 4145988 ) √
+Current ramdsize using cat : 330752 with required size : 330752 bytes √
+cat accepted! √
+Merging [head+ramdisk] + tail √
+    Image ---> piggy.lzo √
+    piggy.lzo ---> piggy.lzo.o √
+    Compiling head.o √
+    Compiling misc.o √
+    Compiling decompress.o √
+    Compiling lib1funcs.o √
+    Create vmlinux.lds √
+    head.o misc.o piggy.lzo.o decompress.o lib1funcs.o  -> vmlinux √
+    vmlinux ---> zImage √
+    Compiled new zImage size:2289368 √
+MAKE_FIPS for zImage. √
+new_zImage has been created. √
+
+Cleaning up...      finished.
+denz@AsusHD:~/Allinwork/Test/Kernel_Repack_Samsung$ mkimage -A arm -O linux -T kernel -C none -a 0x81000040 -e 0x81000040 -n Linux-3.0.31+ -d zImage uImage
+Image Name:   Linux-3.0.31+
+Created:      Mon Apr  7 21:47:27 2014
+Image Type:   ARM Linux Kernel Image (uncompressed)
+Data Size:    2289400 Bytes = 2235.74 kB = 2.18 MB
+Load Address: 81000040
+Entry Point:  81000040
+denz@AsusHD:~/Allinwork/Test/Kernel_Repack_Samsung$ dd if=./uImage of=./zImage bs=1 skip=64
+2288716+0 записей получено
+2288716+0 записей отправлено
+скопировано 2288716 байт (2,3 MB), 4,26695 c, 536 kB/c
+denz@AsusHD:~/Allinwork/Test/Kernel_Repack_Samsung$ ./unpack.sh zImage
+[I] Extracting lzo'd kernel image from file: zImage (start = 6212) 
+./unpack.sh: строка 319: [: -le: ожидается использование унарного оператора
+./unpack.sh: строка 320: [: -le: ожидается использование унарного оператора
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+./unpack.sh: строка 298: [: =: ожидается использование унарного оператора
+mv: не удалось выполнить stat для «/home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar»: Нет такого файла или каталога
+[I] Found payload: 'recovery' compression= offset=, len= 
+[I] Extracting '/home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar' ... 
+cat: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/recovery.tar: Нет такого файла или каталога
+./unpack.sh: строка 303: [: -le: ожидается использование унарного оператора
+./unpack.sh: строка 304: [: -le: ожидается использование унарного оператора
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+grep: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+./unpack.sh: строка 298: [: =: ожидается использование унарного оператора
+mv: не удалось выполнить stat для «/home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar»: Нет такого файла или каталога
+[I] Found payload: 'boot' compression= offset=, len= 
+[I] Extracting '/home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar' ... 
+cat: /home/denz/Allinwork/Test/Kernel_Repack_Samsung/unpack_kernel_tmp/boot.tar: Нет такого файла или каталога
+[I] CPIO compression type detected = none | offset = 141392 
+[I] Extracting non-compressed CPIO image from kernel image (offset = 141392) 
+[I] Expanding CPIO archive: initramfs.cpio to initramfs_root. 
+denz@AsusHD:~/Allinwork/Test/Kernel_Repack_Samsung$ ./repack.sh zImage initramfs_root new_zImage---------------------------kernel repacker for i9100--------------------------- √
+Extracting lzo'd kernel from zImage (start = 6212) √
+Non-compressed CPIO image from kernel image (offset = 141392). √
+Check MMC_CAP_ERASE instruction: √
+    Linux version 3.0.31+ (someone@10123243)
+    (gcc version 4.6.x-google 20120106 (prerelease)
+    (GCC) ) #1 SMP PREEMPT 2013年 02月 02日 星期六 17:44:21 CST √
+    Nothing found. √
+make initramfs.cpio √
+Now we are rebuilding the zImage: √
+CPIO image MAX size:330752 √
+Head count:472144 √
+Making head.img ( from 0 ~ 141392 ) √
+Making a tail.img ( from 472144 ~ 4145988 ) √
+Current ramdsize using cat : 326656 with required size : 330752 bytes √
+cat accepted! √
+Merging [head+ramdisk] + padding + tail √
+    Image ---> piggy.lzo √
+    piggy.lzo ---> piggy.lzo.o √
+    Compiling head.o √
+    Compiling misc.o √
+    Compiling decompress.o √
+    Compiling lib1funcs.o √
+    Create vmlinux.lds √
+    head.o misc.o piggy.lzo.o decompress.o lib1funcs.o  -> vmlinux √
+    vmlinux ---> zImage √
+    Compiled new zImage size:2288476 √
+MAKE_FIPS for zImage. √
+new_zImage has been created. √
+
+Cleaning up...      finished.
+denz@AsusHD:~/Allinwork/Test/Kernel_Repack_Samsung$ mkimage -A arm -O linux -T kernel -C none -a 0x81000040 -e 0x81000040 -n Linux-3.0.31+ -d zImage uImage
+Image Name:   Linux-3.0.31+
+Created:      Mon Apr  7 21:58:25 2014
+Image Type:   ARM Linux Kernel Image (uncompressed)
+Data Size:    2288508 Bytes = 2234.87 kB = 2.18 MB
+Load Address: 81000040
+Entry Point:  81000040

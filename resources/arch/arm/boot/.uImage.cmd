@@ -1,0 +1,1 @@
+cmd_arch/arm/boot/uImage := /bin/bash /home/denz/Allinwork/Compiling/Mhfan/Sources_kernel/android_kernel_sd_x7/scripts/mkuboot.sh -A arm -O linux -T kernel -C none -a 0x81000040 -e 0x81000040 -n 'Linux-3.0.31+' -d arch/arm/boot/zImage arch/arm/boot/uImage
